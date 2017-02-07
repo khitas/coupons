@@ -1,0 +1,8 @@
+{
+	RememberMe = 0;
+	UserName = "";
+	PassWord = "";
+	TypesOrderBy = 2;
+	CategoriesOrderBy = 3;
+	MapRadius = 2;
+}

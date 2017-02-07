@@ -1,0 +1,23 @@
+Create Self-Signed Certificate
+
+Patch your iPhone SDK to allow the use of this certificate:
+
+    Launch Keychain Access.app. With no items selected, from the Keychain menu select Certificate Assistant, then Create a Certificate.
+        Name: iPhone Developer
+        Certificate Type: Code Signing
+        Let me override defaults: Yes
+
+    Click Continue
+        Validity: 3650 days
+
+    Click Continue
+
+    Blank out the Email address field.
+
+    Click Continue until complete.
+
+    You should see "This root certificate is not trusted". This is expected.
+
+    Set the iPhone SDK to allow the self-signed certificate to be used:
+
+sudo /usr/bin/sed -i .bak 's/XCiPhoneOSCodeSig	nContext/XCCodeSignContext/' /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Info.plist
